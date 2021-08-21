@@ -6,28 +6,24 @@ namespace Physics.Acceleration
 {
     public class MovementT2 : MonoBehaviour
     {
-        [SerializeField]
-        private Vector3 velocity;
+        public Vector3 velocity;
 
-        [SerializeField]
-        private Vector3 accleration;
+        public Vector3 accleration;
 
         void FixedUpdate()
         {
             UpdateVelocity();
 
-            transform.position = new Vector3(
-                CalculatePosition(transform.position.x),
-                transform.position.y,
-                transform.position.z
-            );
+            transform.position = CalculatePosition();
         }
 
-        private float CalculatePosition(float positionX)
+        private Vector3 CalculatePosition()
         {
-            return positionX
-                + velocity.x * Time.deltaTime
-                + (accleration.x * Time.deltaTime / 2);
+            return (
+                transform.position
+                + (velocity * Time.deltaTime)
+                + (accleration * Time.deltaTime / 2)
+            );
         }
 
         private void UpdateVelocity()
