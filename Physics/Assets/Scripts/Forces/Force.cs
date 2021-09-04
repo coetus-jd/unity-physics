@@ -15,6 +15,10 @@ namespace Physics.Forces
 
         public float Mass;
 
+        /// <summary>
+        /// Realiza a soma vetorial em todos os eixos (x, y, z)
+        /// </summary>
+        /// <returns></returns>
         public Vector3 ResultantForce()
         {
             return Force1 + Force2 + Force3;
@@ -24,7 +28,7 @@ namespace Physics.Forces
         {
             var resultantForce = ResultantForce();
             
-            return ((resultantForce[(int)index] / Mass));
+            return resultantForce[(int)index] / Mass;
         }
     }
 }

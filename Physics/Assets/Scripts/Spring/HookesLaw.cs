@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class HookesLaw : MonoBehaviour
 {
-    public float NormalPosition;
+    /// <summary>
+    /// Posição de equilíbrio
+    /// </summary>
+    public Vector3 BalancePosition;
 
     public float SpringConstant;
 
@@ -16,14 +19,8 @@ public class HookesLaw : MonoBehaviour
     /// </summary>
     [SerializeField]
     private Vector3 SpringForce;
-    
+
     private MovementT2 movement;
-
-    private float Distance;
-
-    private int MovementDirection;
-
-    private bool PassedWall;
 
     void Start()
     {
@@ -32,27 +29,18 @@ public class HookesLaw : MonoBehaviour
 
     void FixedUpdate()
     {
-        Distance = Vector3.Distance(
-            ConnectedObject.transform.position,
-            transform.position
-        );
-
-        if (Distance > NormalPosition)
-            MovementDirection = -1;
-        else
-            MovementDirection = 1;
-
-        SpringForce = ((SpringConstant * transform.position)
-            * MovementDirection)
-            * Time.deltaTime;
+        CalculateSpringForce();
 
         movement.accleration = SpringForce;
     }
-
-    void OnTriggerEnter(Collider collider)
+    
+    /// <summary>
+    /// F = K . X
+    /// F = -k . (x - x0)
+    /// </summary>
+    private void CalculateSpringForce()
     {
-        Debug.Log(collider);
-        if (collider.gameObject.name == "Wall")
-            PassedWall = !PassedWall;
+        SpringForce = (-SpringConstant * (transform.position - BalancePosition)) 
+            * Time.deltaTime;
     }
 }
