@@ -24,6 +24,13 @@ namespace Physics.Forces
             return Force1 + Force2 + Force3;
         }
 
+        public Vector3 Acceleration()
+        {
+            var resultantForce = ResultantForce();
+            
+            return resultantForce / Mass;
+        }
+
         public float Acceleration(AxisEnum index)
         {
             var resultantForce = ResultantForce();

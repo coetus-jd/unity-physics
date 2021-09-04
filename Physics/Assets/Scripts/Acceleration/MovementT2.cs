@@ -14,6 +14,8 @@ namespace Physics.Acceleration
         {
             UpdateVelocity();
 
+            Debug.Log($"Posição: {CalculatePosition()}");
+
             transform.position = CalculatePosition();
         }
 
