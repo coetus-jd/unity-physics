@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Physics.Enums;
 using UnityEngine;
 
@@ -7,23 +8,34 @@ namespace Physics.Forces
 {
     public class Force : MonoBehaviour
     {
-        public Vector3 Force1;
+        /// <summary>
+        /// All forces acting on the object
+        /// </summary>
+        public List<Vector3> Forces;
 
-        public Vector3 Force2;
-
-        public Vector3 Force3;
-
+        /// <summary>
+        /// Weight of this object
+        /// </summary>
         public float Mass;
 
         /// <summary>
-        /// Realiza a soma vetorial em todos os eixos (x, y, z)
+        /// Sum of all forces acting on the object
         /// </summary>
         /// <returns></returns>
         public Vector3 ResultantForce()
         {
-            return Force1 + Force2 + Force3;
+            return Forces.Aggregate(
+                new Vector3(0, 0, 0),
+                (seed, vector) => seed + vector
+            );
         }
 
+        /// <summary>
+        /// Acceleration of this object<br/>
+        /// a = Fr / M<br/>
+        /// accleration = resultant force / mass
+        /// </summary>
+        /// <returns></returns>
         public Vector3 Acceleration()
         {
             var resultantForce = ResultantForce();
@@ -31,6 +43,11 @@ namespace Physics.Forces
             return resultantForce / Mass;
         }
 
+        /// <summary>
+        /// Get accleration from a specific axis
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public float Acceleration(AxisEnum index)
         {
             var resultantForce = ResultantForce();

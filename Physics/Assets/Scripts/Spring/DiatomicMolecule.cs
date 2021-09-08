@@ -36,12 +36,14 @@ namespace Physics.Spring
             Molecules
                 .First()
                 .GetComponent<Force>()
-                .Force1 = new Vector3(springForce * MoleculeDirection * -1, 0, 0);
+                .Forces
+                .Add(new Vector3(springForce * MoleculeDirection * -1, 0, 0));
 
             Molecules
                 .Last()
                 .GetComponent<Force>()
-                .Force1 = new Vector3(springForce * MoleculeDirection * 1, 0, 0);
+                .Forces
+                .Add(new Vector3(springForce * MoleculeDirection * 1, 0, 0));
         }
     }
 }

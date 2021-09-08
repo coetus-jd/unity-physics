@@ -8,21 +8,23 @@ namespace Physics.Forces
 {
     public class WeightForce : MonoBehaviour
     {
-        private Force force;
+        private Force Force;
 
-        private MovementT2 movement;
+        private MovementT2 Movement;
 
         void Start()
         {
-            force = GetComponent<Force>();
-            // movement = GetComponent<MovementT2>();
+            Force = GetComponent<Force>();
+            Movement = GetComponent<MovementT2>();
+            SetWeightForce();
         }
 
-        void FixedUpdate()
+        private void SetWeightForce()
         {
-            transform.position += new Vector3(
-                0, force.Mass * force.ResultantForce().y * Time.deltaTime, 0
-            );
+            var weightForce = Force.Mass * Force.ResultantForce();
+            Force.Forces.Add(weightForce);
+
+            Movement.accleration = Force.Acceleration();
         }
     }
 }

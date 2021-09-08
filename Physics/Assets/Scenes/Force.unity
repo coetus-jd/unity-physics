@@ -333,12 +333,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127979677}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f9e75dff448e0e42b39f5e7f850c2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 0, y: -1, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
   accleration: {x: 0, y: 0, z: 0}
 --- !u!114 &1127979684
 MonoBehaviour:
@@ -352,10 +352,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc3f2f1cd9279640b27fad962d30d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force1: {x: 0, y: 0, z: 0}
-  Force2: {x: 0, y: -9.81, z: 0}
-  Force3: {x: 0, y: 0, z: 0}
-  Mass: 0.5
+  Forces:
+  - {x: 0, y: -9.81, z: 0}
+  Mass: 1
 --- !u!1 &1296571560
 GameObject:
   m_ObjectHideFlags: 0
