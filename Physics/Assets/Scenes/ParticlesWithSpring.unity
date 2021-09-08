@@ -246,7 +246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295823786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalPosition: {x: 6.78, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 527506055}
@@ -264,9 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc3f2f1cd9279640b27fad962d30d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force1: {x: 0, y: 0, z: 0}
-  Force2: {x: 0, y: 0, z: 0}
-  Force3: {x: 0, y: 0, z: 0}
+  Forces: []
   Mass: 1
 --- !u!114 &295823789
 MonoBehaviour:
@@ -280,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9e75dff448e0e42b39f5e7f850c2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 5, y: 0, z: 0}
+  velocity: {x: 20, y: 0, z: 0}
   accleration: {x: 0, y: 0, z: 0}
 --- !u!114 &295823790
 MonoBehaviour:
@@ -506,7 +504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598215425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: -0.14, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 527506055}
@@ -600,7 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9e75dff448e0e42b39f5e7f850c2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: -5, y: 0, z: 0}
+  velocity: {x: -10, y: 0, z: 0}
   accleration: {x: 0, y: 0, z: 0}
 --- !u!114 &598215432
 MonoBehaviour:
@@ -614,9 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc3f2f1cd9279640b27fad962d30d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force1: {x: 0, y: 0, z: 0}
-  Force2: {x: 0, y: 0, z: 0}
-  Force3: {x: 0, y: 0, z: 0}
+  Forces: []
   Mass: 1
 --- !u!1 &692448937
 GameObject:
@@ -916,7 +912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BalancePosition: 3
-  SpringConstant: 1
+  SpringConstant: 3
   Molecules:
   - {fileID: 598215425}
   - {fileID: 295823786}

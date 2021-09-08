@@ -13,9 +13,6 @@ namespace Physics.Acceleration
         void FixedUpdate()
         {
             UpdateVelocity();
-
-            Debug.Log($"Posição: {CalculatePosition()}");
-
             transform.position = CalculatePosition();
         }
 

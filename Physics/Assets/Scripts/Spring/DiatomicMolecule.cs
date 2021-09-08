@@ -16,34 +16,58 @@ namespace Physics.Spring
 
         public List<GameObject> Molecules;
 
+        /// <summary>
+        /// Controls the direction of each molecule
+        /// </summary>
         public int MoleculeDirection;
+
+        private Force FirstMoleculeForce
+        {
+            get
+            {
+                return Molecules?.First()?.GetComponent<Force>();
+            }
+        }
+
+        private Force LastMoleculeForce
+        {
+            get
+            {
+                return Molecules?.Last()?.GetComponent<Force>();
+            }
+        }
+
+        void Start()
+        {
+            FirstMoleculeForce.Forces ??= new List<Vector3>();
+            LastMoleculeForce.Forces ??= new List<Vector3>();
+        }
 
         void FixedUpdate()
         {
             float distanceBetweenMolecules = Vector3.Distance(
-                Molecules.First().transform.position,
-                Molecules.Last().transform.position
+                FirstMoleculeForce.transform.position,
+                LastMoleculeForce.transform.position
             );
 
-            var springForce = SpringConstant
-                * Mathf.Abs(distanceBetweenMolecules - BalancePosition);
+            var springForce = SpringConstant * Mathf.Abs(distanceBetweenMolecules - BalancePosition);
 
             if (distanceBetweenMolecules < BalancePosition)
                 MoleculeDirection = 1;
             else
                 MoleculeDirection = -1;
 
-            Molecules
-                .First()
-                .GetComponent<Force>()
-                .Forces
-                .Add(new Vector3(springForce * MoleculeDirection * -1, 0, 0));
+            float movementDirection = springForce * MoleculeDirection;
+            
+            if (FirstMoleculeForce.Forces?.Count == 0)
+                FirstMoleculeForce.Forces.Add(new Vector3(movementDirection * -1, 0, 0));
+            else
+                FirstMoleculeForce.Forces[0] = new Vector3(movementDirection * -1, 0, 0);
 
-            Molecules
-                .Last()
-                .GetComponent<Force>()
-                .Forces
-                .Add(new Vector3(springForce * MoleculeDirection * 1, 0, 0));
+            if (LastMoleculeForce?.Forces?.Count == 0)
+                LastMoleculeForce.Forces.Add(new Vector3(movementDirection * 1, 0, 0));
+            else
+                LastMoleculeForce.Forces[0] = new Vector3(movementDirection * 1, 0, 0);
         }
     }
 }
