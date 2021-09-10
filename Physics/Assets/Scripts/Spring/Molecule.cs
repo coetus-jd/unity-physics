@@ -10,6 +10,8 @@ namespace Physics.Spring
 
         public Force Force;
 
+        public bool IsMiddle;
+
         void Start()
         {
             Movement = GetComponent<MovementT2>();
