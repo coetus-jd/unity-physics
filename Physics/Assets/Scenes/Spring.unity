@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BalancePosition: {x: 3, y: 0, z: 0}
-  SpringConstant: 10
+  SpringConstant: 1
   ConnectedObject: {fileID: 129065943}
   SpringForce: {x: 10, y: 0, z: 0}
 --- !u!54 &1105310466
