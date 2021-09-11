@@ -59,9 +59,7 @@ namespace Physics.Spring
 
             float movementDirection = springForce * MoleculeDirection;
 
-            if (FirstMoleculeForce.Forces?.Count == 0)
-                FirstMoleculeForce.Forces.Add(new Vector3(movementDirection * -1, 0, 0));
-            else if (FirstMoleculeForce.GetComponent<Molecule>().IsMiddle && FirstMoleculeForce.Forces?.Count < 2)
+            if (FirstMoleculeForce.GetComponent<Molecule>().IsMiddle && FirstMoleculeForce.Forces?.Count < 2)
                 FirstMoleculeForce.Forces.Add(new Vector3(movementDirection * 1, 0, 0));
             else
             {
@@ -71,10 +69,7 @@ namespace Physics.Spring
                     FirstMoleculeForce.Forces[1] = new Vector3(movementDirection * 1, 0, 0);
             }
 
-            if (LastMoleculeForce?.Forces?.Count == 0)
-                LastMoleculeForce.Forces.Add(new Vector3(movementDirection * 1, 0, 0));
-            else
-                LastMoleculeForce.Forces[0] = new Vector3(movementDirection * 1, 0, 0);
+            LastMoleculeForce.Forces[0] = new Vector3(movementDirection * 1, 0, 0);
         }
     }
 }
