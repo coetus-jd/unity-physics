@@ -12,8 +12,8 @@ namespace Physics.Acceleration
 
         void FixedUpdate()
         {
-            transform.position = CalculatePosition();
             UpdateVelocity();
+            transform.position = CalculatePosition();
         }
 
         private Vector3 CalculatePosition()

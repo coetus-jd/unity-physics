@@ -630,6 +630,8 @@ MonoBehaviour:
   - {fileID: 291773294}
   - {fileID: 582477958}
   MoleculeDirection: 0
+  DampingConstant: 0
+  UseDamping: 0
 --- !u!1 &461727277
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &527506055
 Transform:
   m_ObjectHideFlags: 0
@@ -1360,6 +1362,8 @@ MonoBehaviour:
   - {fileID: 598215425}
   - {fileID: 295823786}
   MoleculeDirection: 0
+  DampingConstant: 0
+  UseDamping: 0
 --- !u!1 &1665820667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,6 +1413,8 @@ MonoBehaviour:
   - {fileID: 582477958}
   - {fileID: 1421540282}
   MoleculeDirection: 0
+  DampingConstant: 0
+  UseDamping: 0
 --- !u!1 &1936781248
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Physics.Acceleration;
 using Physics.Forces;
 using UnityEngine;
 
@@ -20,6 +21,11 @@ namespace Physics.Spring
         /// Controls the direction of each molecule
         /// </summary>
         public int MoleculeDirection;
+
+        public float DampingConstant;
+
+        [SerializeField]
+        private bool UseDamping;
 
         private Force FirstMoleculeForce
         {
@@ -50,7 +56,12 @@ namespace Physics.Spring
                 LastMoleculeForce.transform.position
             );
 
-            var springForce = SpringConstant * Mathf.Abs(distanceBetweenMolecules - BalancePosition);
+            float velocity = Mathf.Abs(
+                FirstMoleculeForce.GetComponent<MovementT2>().velocity.x
+                - LastMoleculeForce.GetComponent<MovementT2>().velocity.x
+            );
+
+            var springForce = CalculateSpringForce(distanceBetweenMolecules, velocity);
 
             if (distanceBetweenMolecules < BalancePosition)
                 MoleculeDirection = 1;
@@ -70,6 +81,14 @@ namespace Physics.Spring
             }
 
             LastMoleculeForce.Forces[0] = new Vector3(movementDirection * 1, 0, 0);
+        }
+
+        private float CalculateSpringForce(float distance, float velocity)
+        {
+            if (UseDamping)
+                return (DampingConstant * velocity) - (SpringConstant * (distance - BalancePosition));
+
+            return SpringConstant * Mathf.Abs(distance - BalancePosition);
         }
     }
 }
