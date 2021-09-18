@@ -16,6 +16,8 @@ namespace Physics.Spring
 
         public GameObject ConnectedObject;
 
+        public float DampingConstant;
+
         /// <summary>
         /// Armazena os valores de todas as forças elásticas nos 3 eixos
         /// </summary>
@@ -23,6 +25,9 @@ namespace Physics.Spring
         private Vector3 SpringForce;
 
         private MovementT2 movement;
+
+        [SerializeField]
+        private bool UseDamping;
 
         void Start()
         {
@@ -41,6 +46,12 @@ namespace Physics.Spring
         /// </summary>
         private void CalculateSpringForce()
         {
+            if (UseDamping)
+            {
+                SpringForce = -(DampingConstant * movement.velocity) - (SpringConstant * (transform.position - BalancePosition));
+                return;
+            }
+
             SpringForce = -SpringConstant * (transform.position - BalancePosition);
         }
     }
