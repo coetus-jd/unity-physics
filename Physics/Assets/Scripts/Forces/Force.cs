@@ -11,7 +11,7 @@ namespace Physics.Forces
         /// <summary>
         /// All forces acting on the object
         /// </summary>
-        public List<Vector3> Forces;
+        public List<Vector3> ActingForces;
 
         /// <summary>
         /// Weight of this object
@@ -24,7 +24,7 @@ namespace Physics.Forces
         /// <returns></returns>
         public Vector3 ResultantForce()
         {
-            return Forces.Aggregate(
+            return ActingForces.Aggregate(
                 new Vector3(0, 0, 0),
                 (seed, vector) => seed + vector
             );

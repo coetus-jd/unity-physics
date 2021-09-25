@@ -50,8 +50,8 @@ namespace Physics.Spring
             Debug.Log($"Force {springForce}");
             var springForce2 = -springForce;
             
-            FirstMoleculeForce.Forces[0] = new Vector3(springForce2, 0, 0);
-            LastMoleculeForce.Forces[0] = new Vector3(springForce, 0, 0);
+            FirstMoleculeForce.ActingForces[0] = new Vector3(springForce2, 0, 0);
+            LastMoleculeForce.ActingForces[0] = new Vector3(springForce, 0, 0);
         }
     }
 }

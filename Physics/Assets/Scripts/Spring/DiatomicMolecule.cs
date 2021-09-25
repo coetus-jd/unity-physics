@@ -45,8 +45,8 @@ namespace Physics.Spring
 
         void Start()
         {
-            FirstMoleculeForce.Forces ??= new List<Vector3>();
-            LastMoleculeForce.Forces ??= new List<Vector3>();
+            FirstMoleculeForce.ActingForces ??= new List<Vector3>();
+            LastMoleculeForce.ActingForces ??= new List<Vector3>();
         }
 
         void FixedUpdate()
@@ -70,17 +70,17 @@ namespace Physics.Spring
 
             float movementDirection = springForce * MoleculeDirection;
 
-            if (FirstMoleculeForce.GetComponent<Molecule>().IsMiddle && FirstMoleculeForce.Forces?.Count < 2)
-                FirstMoleculeForce.Forces.Add(new Vector3(movementDirection * 1, 0, 0));
+            if (FirstMoleculeForce.GetComponent<Molecule>().IsMiddle && FirstMoleculeForce.ActingForces?.Count < 2)
+                FirstMoleculeForce.ActingForces.Add(new Vector3(movementDirection * 1, 0, 0));
             else
             {
-                FirstMoleculeForce.Forces[0] = new Vector3(movementDirection * -1, 0, 0);
+                FirstMoleculeForce.ActingForces[0] = new Vector3(movementDirection * -1, 0, 0);
 
                 if (FirstMoleculeForce.GetComponent<Molecule>().IsMiddle)
-                    FirstMoleculeForce.Forces[1] = new Vector3(movementDirection * 1, 0, 0);
+                    FirstMoleculeForce.ActingForces[1] = new Vector3(movementDirection * 1, 0, 0);
             }
 
-            LastMoleculeForce.Forces[0] = new Vector3(movementDirection * 1, 0, 0);
+            LastMoleculeForce.ActingForces[0] = new Vector3(movementDirection * 1, 0, 0);
         }
 
         private float CalculateSpringForce(float distance, float velocity)

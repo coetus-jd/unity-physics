@@ -18,8 +18,8 @@ namespace Physics.Spring
             Movement = GetComponent<MovementT2>();
             Force = GetComponent<Force>();
             
-            Force.Forces = new List<Vector3>();
-            Force.Forces.Add(new Vector3(0, 0, 0));
+            Force.ActingForces = new List<Vector3>();
+            Force.ActingForces.Add(new Vector3(0, 0, 0));
         }
 
         void FixedUpdate()

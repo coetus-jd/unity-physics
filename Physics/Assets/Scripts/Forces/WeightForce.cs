@@ -19,10 +19,15 @@ namespace Physics.Forces
             SetWeightForce();
         }
 
+        private void FixedUpdate()
+        {
+            Movement.accleration = Force.Acceleration();
+        }
+
         private void SetWeightForce()
         {
-            var weightForce = Force.Mass * Force.ResultantForce();
-            Force.Forces.Add(weightForce);
+            var weightForce = Force.Mass * new Vector3(0, -9.81f, 0);
+            Force.ActingForces.Add(weightForce);
 
             Movement.accleration = Force.Acceleration();
         }
