@@ -613,7 +613,7 @@ MonoBehaviour:
   - {fileID: 1461743756}
   - {fileID: 2010957897}
   MoleculeDirection: 0
-  DampingConstant: 0
+  DampingConstant: 10
   UseDamping: 1
 --- !u!1 &799829885
 GameObject:
@@ -1192,7 +1192,7 @@ MonoBehaviour:
   - {fileID: 2010957897}
   - {fileID: 129378600}
   MoleculeDirection: 0
-  DampingConstant: 0
+  DampingConstant: 10
   UseDamping: 1
 --- !u!1 &1739453942
 GameObject:
@@ -1209,7 +1209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1739453943
 Transform:
   m_ObjectHideFlags: 0
