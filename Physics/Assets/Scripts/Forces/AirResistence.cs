@@ -36,7 +36,7 @@ namespace Physics.Assets.Scripts.Forces
                 return;
 
             if (Force.ActingForces?.Count > 0)
-                Force.ActingForces[0] += EnduranceForce();
+                Force.ActingForces[0] = EnduranceForce();
         }
 
         public Vector3 EnduranceForce()

@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActingForces: []
-  Mass: 1
+  Mass: 10
 --- !u!114 &513529450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,7 +560,7 @@ Rigidbody:
   m_GameObject: {fileID: 776342447}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 10
+  m_Drag: 100
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
