@@ -57,8 +57,8 @@ namespace Physics.Spring
             );
 
             float velocity = Mathf.Abs(
-                FirstMoleculeForce.GetComponent<MovementT2>().velocity.x
-                - LastMoleculeForce.GetComponent<MovementT2>().velocity.x
+                FirstMoleculeForce.GetComponent<MovementT2>().Velocity.x
+                - LastMoleculeForce.GetComponent<MovementT2>().Velocity.x
             );
 
             var springForce = CalculateSpringForce(distanceBetweenMolecules, velocity);

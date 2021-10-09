@@ -6,9 +6,9 @@ namespace Physics.Acceleration
 {
     public class MovementT2 : MonoBehaviour
     {
-        public Vector3 velocity;
+        public Vector3 Velocity;
 
-        public Vector3 accleration;
+        public Vector3 Accleration;
 
         void FixedUpdate()
         {
@@ -20,14 +20,14 @@ namespace Physics.Acceleration
         {
             return (
                 transform.position
-                + (velocity * Time.deltaTime)
-                + (accleration * Time.deltaTime / 2)
+                + (Velocity * Time.deltaTime)
+                + (Accleration * Time.deltaTime / 2)
             );
         }
 
         private void UpdateVelocity()
         {
-            velocity += accleration * Time.deltaTime;
+            Velocity += Accleration * Time.deltaTime;
         }
     }
 

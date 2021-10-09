@@ -24,7 +24,7 @@ namespace Physics.Spring
 
         void FixedUpdate()
         {
-            Movement.accleration = Force.Acceleration();
+            Movement.Accleration = Force.Acceleration();
         }
     }
 }

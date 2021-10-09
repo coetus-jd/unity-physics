@@ -37,7 +37,7 @@ namespace Physics.Spring
         void FixedUpdate()
         {
             CalculateSpringForce();
-            movement.accleration = SpringForce;
+            movement.Accleration = SpringForce;
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Physics.Spring
         {
             if (UseDamping)
             {
-                SpringForce = -(DampingConstant * movement.velocity) - (SpringConstant * (transform.position - BalancePosition));
+                SpringForce = -(DampingConstant * movement.Velocity) - (SpringConstant * (transform.position - BalancePosition));
                 return;
             }
 

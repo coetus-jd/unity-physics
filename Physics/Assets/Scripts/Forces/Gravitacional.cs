@@ -32,12 +32,12 @@ namespace Physics.Assets.Scripts.Forces
             var secondDirection = (firstPosition - secondPosition).normalized;
 
             FirstObject.GetComponent<Force>().ActingForces[0] = GravitacionalForce(firstDirection);
-            FirstObject.GetComponent<MovementT2>().accleration = FirstObject
+            FirstObject.GetComponent<MovementT2>().Accleration = FirstObject
                 .GetComponent<Force>()
                 .Acceleration();
 
             SecondObject.GetComponent<Force>().ActingForces[0] = GravitacionalForce(secondDirection);
-            SecondObject.GetComponent<MovementT2>().accleration = SecondObject
+            SecondObject.GetComponent<MovementT2>().Accleration = SecondObject
                 .GetComponent<Force>()
                 .Acceleration();
         }
@@ -54,7 +54,7 @@ namespace Physics.Assets.Scripts.Forces
 
             return (
                 (GravitacionalConstant * firstMass * secondMass)
-                / distance * distance
+                / (distance * distance)
             ) * direction;
         }
     }
