@@ -168,7 +168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirstObject: {fileID: 406045276}
   SecondObject: {fileID: 734360069}
-  GravitacionalConstant: 0.1
 --- !u!1 &129065943
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406045276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.82, y: -3.7, z: 0}
+  m_LocalPosition: {x: -10.69, y: -1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1646508916}
@@ -390,8 +389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9e75dff448e0e42b39f5e7f850c2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0, z: 0}
-  accleration: {x: 0, y: 0, z: 0}
+  Velocity: {x: 0, y: 0, z: 0}
+  Accleration: {x: 0, y: 0, z: 0}
 --- !u!114 &406045282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActingForces: []
-  Mass: 1
+  Mass: 100
 --- !u!1 &470571868
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,8 +489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9e75dff448e0e42b39f5e7f850c2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 10, y: 0, z: 0}
-  accleration: {x: 0, y: 0, z: 0}
+  Velocity: {x: 0, y: 0, z: 0}
+  Accleration: {x: 0, y: 0, z: 0}
 --- !u!145 &684863040
 SpringJoint:
   m_ObjectHideFlags: 0
@@ -623,7 +622,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734360069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.55, y: -3.937, z: 0}
+  m_LocalPosition: {x: 5.68, y: -7.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1646508916}
@@ -642,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActingForces: []
-  Mass: 5
+  Mass: 90
 --- !u!114 &734360072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,8 +654,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9e75dff448e0e42b39f5e7f850c2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0, z: 0}
-  accleration: {x: 0, y: 0, z: 0}
+  Velocity: {x: 0, y: 0, z: 0}
+  Accleration: {x: 0, y: 0, z: 0}
 --- !u!135 &734360073
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -767,8 +766,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9e75dff448e0e42b39f5e7f850c2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 10, y: 0, z: 0}
-  accleration: {x: 0, y: 0, z: 0}
+  Velocity: {x: 0, y: 0, z: 0}
+  Accleration: {x: 0, y: 0, z: 0}
 --- !u!145 &799829888
 SpringJoint:
   m_ObjectHideFlags: 0
@@ -919,8 +918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9e75dff448e0e42b39f5e7f850c2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 10, y: 0, z: 0}
-  accleration: {x: 0, y: 0, z: 0}
+  Velocity: {x: 0, y: 0, z: 0}
+  Accleration: {x: 0, y: 0, z: 0}
 --- !u!145 &1139532003
 SpringJoint:
   m_ObjectHideFlags: 0
@@ -1280,8 +1279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9e75dff448e0e42b39f5e7f850c2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 10, y: 0, z: 0}
-  accleration: {x: 0, y: 0, z: 0}
+  Velocity: {x: 0, y: 0, z: 0}
+  Accleration: {x: 0, y: 0, z: 0}
 --- !u!145 &1857657130
 SpringJoint:
   m_ObjectHideFlags: 0
@@ -1534,5 +1533,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9e75dff448e0e42b39f5e7f850c2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 10, y: 0, z: 0}
-  accleration: {x: 0, y: 0, z: 0}
+  Velocity: {x: 0, y: 0, z: 0}
+  Accleration: {x: 0, y: 0, z: 0}

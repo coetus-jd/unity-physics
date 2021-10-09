@@ -11,7 +11,10 @@ namespace Physics.Assets.Scripts.Forces
 
         public GameObject SecondObject;
 
-        public float GravitacionalConstant;
+        public float GravitacionalConstant
+        {
+            get => 0.1f; //6.67f * Mathf.Pow(10, -11);
+        }
 
         void Start()
         {
@@ -28,8 +31,8 @@ namespace Physics.Assets.Scripts.Forces
             var firstPosition = FirstObject.transform.position;
             var secondPosition = SecondObject.transform.position;
 
-            var firstDirection = (secondPosition - firstPosition).normalized;
-            var secondDirection = (firstPosition - secondPosition).normalized;
+            var firstDirection = Vector3.Normalize(secondPosition - firstPosition);
+            var secondDirection = Vector3.Normalize(firstPosition - secondPosition);
 
             FirstObject.GetComponent<Force>().ActingForces[0] = GravitacionalForce(firstDirection);
             FirstObject.GetComponent<MovementT2>().Accleration = FirstObject
