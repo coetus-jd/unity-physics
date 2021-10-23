@@ -41,13 +41,13 @@ namespace Physics.Assets.Scripts.Forces
 
         public Vector3 EnduranceForce()
         {
-            var newVector = new Vector3(
+            var newVelocity = new Vector3(
                 Mathf.Pow(Movement.Velocity.x, 2),
                 Mathf.Pow(Movement.Velocity.y, 2),
                 Mathf.Pow(Movement.Velocity.z, 2)
             );
 
-            return ((0.5f * FluidDensity) * Aerodynamics * Area) * newVector; 
+            return ((0.5f * FluidDensity) * Aerodynamics * Area) * newVelocity; 
         }
     }
 }

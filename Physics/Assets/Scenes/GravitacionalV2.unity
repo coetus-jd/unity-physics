@@ -163,21 +163,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 68641413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea491c6f0f5a4d44c9258cbcd78eaaa7, type: 3}
+  m_Script: {fileID: 11500000, guid: 27b13d827f1f2f9468013deec17ac9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sun: {fileID: 406045276}
-  SunPosition: {x: 0, y: 0, z: 0}
-  SunMass: 1e+9
-  Planet: {fileID: 734360069}
-  StartVelocity: {x: 0, y: 5, z: 0}
-  PlanetPosition: {x: 0, y: 0, z: 0}
-  PlanetMass: 90
-  PlanetRigidBody: {fileID: 734360077}
-  OriginalPosition: {x: 0, y: 0, z: 0}
-  NewPosition: {x: 0, y: 0, z: 0}
-  Velocity: {x: 0, y: 0, z: 0}
-  Acceleration: {x: 0, y: 0, z: 0}
+  FirstObject: {fileID: 406045276}
+  SecondObject: {fileID: 734360069}
 --- !u!1 &129065943
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,6 +292,9 @@ GameObject:
   - component: {fileID: 406045280}
   - component: {fileID: 406045279}
   - component: {fileID: 406045278}
+  - component: {fileID: 406045281}
+  - component: {fileID: 406045282}
+  - component: {fileID: 406045283}
   - component: {fileID: 406045284}
   m_Layer: 0
   m_Name: Sun
@@ -386,6 +379,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406045276}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &406045281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406045276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9e75dff448e0e42b39f5e7f850c2b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Velocity: {x: 0, y: 0, z: 0}
+  Accleration: {x: 0, y: 0, z: 0}
+--- !u!114 &406045282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406045276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc3f2f1cd9279640b27fad962d30d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActingForces: []
+  Mass: 100
+--- !u!114 &406045283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406045276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777418d5bbb057d4cb634eaff13d46a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseDamp: 1
+  FluidDensity: 1.2
+  Aerodynamics: 0.47
+  Movement: {fileID: 0}
+  Force: {fileID: 0}
 --- !u!54 &406045284
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -602,6 +640,9 @@ GameObject:
   - component: {fileID: 734360075}
   - component: {fileID: 734360074}
   - component: {fileID: 734360073}
+  - component: {fileID: 734360072}
+  - component: {fileID: 734360071}
+  - component: {fileID: 734360076}
   - component: {fileID: 734360077}
   m_Layer: 0
   m_Name: Earth
@@ -618,12 +659,40 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734360069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -4.07, z: 0}
+  m_LocalPosition: {x: 3.02, y: -7.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1646508916}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &734360071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734360069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc3f2f1cd9279640b27fad962d30d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActingForces: []
+  Mass: 10
+--- !u!114 &734360072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734360069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9e75dff448e0e42b39f5e7f850c2b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Velocity: {x: 0, y: 1, z: 0}
+  Accleration: {x: 0, y: 0, z: 0}
 --- !u!135 &734360073
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -686,6 +755,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734360069}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &734360076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734360069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777418d5bbb057d4cb634eaff13d46a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseDamp: 1
+  FluidDensity: 1000
+  Aerodynamics: 0.47
+  Movement: {fileID: 0}
+  Force: {fileID: 0}
 --- !u!54 &734360077
 Rigidbody:
   m_ObjectHideFlags: 0

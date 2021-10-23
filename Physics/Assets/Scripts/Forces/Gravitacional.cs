@@ -31,8 +31,8 @@ namespace Physics.Assets.Scripts.Forces
             var firstPosition = FirstObject.transform.position;
             var secondPosition = SecondObject.transform.position;
 
-            var firstDirection = Vector3.Normalize(secondPosition - firstPosition);
-            var secondDirection = Vector3.Normalize(firstPosition - secondPosition);
+            var firstDirection = (secondPosition - firstPosition).normalized;
+            var secondDirection = (firstPosition - secondPosition).normalized;
 
             FirstObject.GetComponent<Force>().ActingForces[0] = GravitacionalForce(firstDirection);
             FirstObject.GetComponent<MovementT2>().Accleration = FirstObject
