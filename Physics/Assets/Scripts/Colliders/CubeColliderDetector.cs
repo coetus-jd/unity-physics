@@ -10,28 +10,50 @@ namespace Physics.Colliders
 
         public GameObject Cube2;
 
-        private float CubeFace;
+        private float CubeX;
+        private float CubeY;
+        private float CubeZ;
 
         private Vector3 CubePosition;
 
-        private float CubeFace2;
+        private float CubeX2;
+        private float CubeY2;
+        private float CubeZ2;
 
-        private Vector3 CubePostion2;
+        private Vector3 CubePosition2;
+
+        private bool DistanceConfirm;
 
         void Start()
         {
-            CubeFace = Cube.transform.localScale.x;
-            CubeFace2 = Cube2.transform.localScale.x;
+            CubeX = Cube.transform.localScale.x;
+            CubeY = Cube.transform.localScale.y;
+            CubeZ = Cube.transform.localScale.z;
+            CubeX2 = Cube2.transform.localScale.x;
+            CubeY2 = Cube2.transform.localScale.y;
+            CubeZ2 = Cube2.transform.localScale.z;
+
         }
 
         void FixedUpdate()
         {
             CubePosition = Cube.transform.position;
-            CubePostion2 = Cube2.transform.position;
+            CubePosition2 = Cube2.transform.position;
 
-            float Distance = Vector3.Distance(CubePosition, CubePostion2);
+            float distanceX = Mathf.Abs(CubePosition.x - CubePosition2.x);
+            float distanceY = Mathf.Abs(CubePosition.y - CubePosition2.y);
+            float distanceZ = Mathf.Abs(CubePosition.z - CubePosition2.z);
 
-            var newColor = Distance <= (CubeFace + CubeFace2) / 2
+            if(distanceX <= (CubeX + CubeX2)/2 && distanceY <= (CubeY + CubeY2)/2 && distanceZ <= (CubeZ + CubeZ2)/2)
+            {
+                DistanceConfirm = true;
+            }
+            else
+            {
+                DistanceConfirm = false;
+            }
+
+            var newColor = DistanceConfirm
                 ? new Color(0, 255, 0)
                 : new Color(0, 0, 0);
 
