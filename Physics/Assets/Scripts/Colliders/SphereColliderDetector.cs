@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Physics.Colliders
 {
-    public class ColliderDetector : MonoBehaviour
+    public class SphereColliderDetector : MonoBehaviour
     {
         public GameObject Sphere;
 

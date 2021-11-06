@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Physics.Colliders
 {
-    public class ColliderDetector2 : MonoBehaviour
+    public class CubeColliderDetector : MonoBehaviour
     {
         public GameObject Cube;
 
@@ -35,7 +35,7 @@ namespace Physics.Colliders
                 ? new Color(0, 255, 0)
                 : new Color(0, 0, 0);
 
-            this.GetComponent<Renderer>().material.color = newColor;
+            GetComponent<Renderer>().material.color = newColor;
         }
     }
 }
