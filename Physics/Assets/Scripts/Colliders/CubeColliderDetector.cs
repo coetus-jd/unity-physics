@@ -32,7 +32,6 @@ namespace Physics.Colliders
             CubeX2 = Cube2.transform.localScale.x;
             CubeY2 = Cube2.transform.localScale.y;
             CubeZ2 = Cube2.transform.localScale.z;
-
         }
 
         void FixedUpdate()
@@ -44,14 +43,14 @@ namespace Physics.Colliders
             float distanceY = Mathf.Abs(CubePosition.y - CubePosition2.y);
             float distanceZ = Mathf.Abs(CubePosition.z - CubePosition2.z);
 
-            if(distanceX <= (CubeX + CubeX2)/2 && distanceY <= (CubeY + CubeY2)/2 && distanceZ <= (CubeZ + CubeZ2)/2)
-            {
+            if (
+                distanceX <= (CubeX + CubeX2) / 2
+                && distanceY <= (CubeY + CubeY2) / 2
+                && distanceZ <= (CubeZ + CubeZ2) / 2
+            )
                 DistanceConfirm = true;
-            }
             else
-            {
                 DistanceConfirm = false;
-            }
 
             var newColor = DistanceConfirm
                 ? new Color(0, 255, 0)
