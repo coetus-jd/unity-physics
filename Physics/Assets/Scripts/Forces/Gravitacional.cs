@@ -18,11 +18,11 @@ namespace Physics.Assets.Scripts.Forces
 
         void Start()
         {
-            FirstObject.GetComponent<Force>().ActingForces ??= new List<Vector3>();
+            // FirstObject.GetComponent<Force>().ActingForces ??= new List<Vector3>();
             SecondObject.GetComponent<Force>().ActingForces ??= new List<Vector3>();
 
             // Initialize the forces list
-            FirstObject.GetComponent<Force>().ActingForces.Add(new Vector3(0, 0, 0));
+            // FirstObject.GetComponent<Force>().ActingForces.Add(new Vector3(0, 0, 0));
             SecondObject.GetComponent<Force>().ActingForces.Add(new Vector3(0, 0, 0));
         }
 
@@ -34,10 +34,10 @@ namespace Physics.Assets.Scripts.Forces
             var firstDirection = (secondPosition - firstPosition).normalized;
             var secondDirection = (firstPosition - secondPosition).normalized;
 
-            FirstObject.GetComponent<Force>().ActingForces[0] = GravitacionalForce(firstDirection);
-            FirstObject.GetComponent<MovementT2>().Accleration = FirstObject
-                .GetComponent<Force>()
-                .Acceleration();
+            // FirstObject.GetComponent<Force>().ActingForces[0] = GravitacionalForce(firstDirection);
+            // FirstObject.GetComponent<MovementT2>().Accleration = FirstObject
+            //     .GetComponent<Force>()
+            //     .Acceleration();
 
             SecondObject.GetComponent<Force>().ActingForces[0] = GravitacionalForce(secondDirection);
             SecondObject.GetComponent<MovementT2>().Accleration = SecondObject

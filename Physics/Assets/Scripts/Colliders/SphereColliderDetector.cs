@@ -11,8 +11,7 @@ namespace Physics.Colliders
         [Header("Sphere 1")]
         public GameObject Sphere;
 
-        [SerializeField]
-        private float SphereMass;
+        public float SphereMass;
 
         private float SphereCollider;
 
@@ -21,16 +20,16 @@ namespace Physics.Colliders
         [Header("Sphere 2")]
         public GameObject Sphere2;
 
-        [SerializeField]
-        private float SphereMass2;
+        public float SphereMass2;
 
         private float SphereCollider2;
 
         private Vector3 SpherePostion2;
 
         [Header("Collision")]
-        [SerializeField]
-        private bool IsPerfectElasticCollision;
+        public bool IsPerfectElasticCollision;
+        
+        public bool ChangeColor = true;
 
         private bool Collided;
 
@@ -60,7 +59,8 @@ namespace Physics.Colliders
 
             HandleCollision();
 
-            if (Collided) Debug.Log("Colidiu");
+            if (!ChangeColor)
+                return;
 
             var newColor = Collided
                 ? new Color(0, 255, 0)
@@ -85,13 +85,16 @@ namespace Physics.Colliders
                 sphereMovement2.Velocity.x = PerfectInelasticCollision.CalculateVelocitySecondObject(
                     SphereMass,
                     SphereMass2,
-                    sphereMovement.Velocity.x
+                    sphereMovement?.Velocity.x ?? 1
                 );
+
+                if (sphereMovement == null)
+                    return;
 
                 sphereMovement.Velocity.x = PerfectInelasticCollision.CalculateVelocityFirstObject(
                     SphereMass,
                     SphereMass2,
-                    sphereMovement.Velocity.x
+                    sphereMovement?.Velocity.x ?? 1
                 );
                 return;
             }
@@ -99,13 +102,13 @@ namespace Physics.Colliders
             sphereMovement2.Velocity.x = PerfectElasticCollision.CalculateVelocitySecondObject(
                 SphereMass,
                 SphereMass2,
-                sphereMovement.Velocity.x
+                sphereMovement?.Velocity.x ?? 1
             );
 
             sphereMovement.Velocity.x = PerfectElasticCollision.CalculateVelocityFirstObject(
                 SphereMass,
                 SphereMass2,
-                sphereMovement.Velocity.x
+                sphereMovement?.Velocity.x ?? 1
             );
         }
     }

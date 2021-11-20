@@ -75,5 +75,7 @@ namespace Physics.Assets.Scripts.Forces
 
             return (force * (heading / heading.magnitude));
         }
+
+        void OnBecameInvisible() => Destroy(gameObject);
    }
 }
