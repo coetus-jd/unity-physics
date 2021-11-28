@@ -1,6 +1,6 @@
 <h5 align="center">
   <img src="https://images.youracclaim.com/images/ebea4a14-2685-4e01-ac66-9bc88e0b26c0/00-Unity_Essentials-Pathway_Badge.png" width="150px" /><br>
-  <b>Unity Physics</b> ✍🏻
+  <b>Unity Physics</b> 🍎
 </h5>
 <p align="center">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
