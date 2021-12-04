@@ -6,7 +6,8 @@
   <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
 </p>
 
-## :open_book: About 
+## :open_book: About
+This project is a collection of simples C# scripts and Unity scenes to apply the knowledges of the discipline of Physics Applied to Digital Games, aiming to build common physics elements of the Unity from scratch, like colliders, spring, movement, ...
 
 ## :bricks: This project was built with: 
 - [Unity](https://unity.com/)
