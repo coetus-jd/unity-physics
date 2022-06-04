@@ -3,7 +3,7 @@
   <b>Unity Physics</b> 🍎
 </h5>
 <p align="center">
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
+  <img alt="License" src="https://img.shields.io/badge/License-GPL--3.0-green?style=for-the-badge&labelColor=1C1E26&color=61ffca">
 </p>
 
 ## :open_book: About
@@ -14,14 +14,14 @@ This project is a collection of simples C# scripts and Unity scenes to apply the
 - [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
 
 ## :running_man: Installing and Running  
- 1. Clone this repository `git clone https://github.com/coetus-jd/unity-physics.git`;
+ 1. Clone this repository `git clone https://github.com/coetus-jd/unity-physics.git`
  2. Open `unity-physics` folder with Unity and be happy 😄.
  
 ## :recycle: Contribute
- 1. Fork this repository;
+ 1. Fork this repository
  2. Create a branch with your feature: ```git checkout -b my-feature```
  3. Commit your changes: ```git commit -m 'feat: My new feature'```
  4. Push your branch: ```git push origin my-feature```
  
 ## :page_with_curl:	License
-This project is under the MIT license. Take a look at the [LICENSE](LICENSE.md) file for more details.
+This project is under the GPL-3.0 license. Take a look at the [LICENSE](LICENSE) file for more details.
